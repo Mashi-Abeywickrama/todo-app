@@ -1,18 +1,30 @@
-import axios from "axios";
+import axiosInstance from "./api/axiosInstance";
 import { Todo } from "../types/todo";
-import { API_BASE } from "./api/baseUrl";
+import { handleApiError } from "../utils/handleApiError";
 
 export const getTasks = async (): Promise<Todo[]> => {
-  const res = await axios.get(`${API_BASE}/get-tasks`);
-  return res.data;
+  try {
+    const res = await axiosInstance.get<Todo[]>("/get-tasks");
+    return res.data;
+  } catch (error) {
+    throw new Error(handleApiError(error));
+  }
 };
 
 export const addTask = async (todo: Todo): Promise<Todo> => {
-  const res = await axios.post(`${API_BASE}/add-task`, todo);
-  return res.data;
+  try {
+    const res = await axiosInstance.post<Todo>("/add-task", todo);
+    return res.data;
+  } catch (error) {
+    throw new Error(handleApiError(error));
+  }
 };
 
 export const updateTask = async (id: number): Promise<Todo> => {
-  const res = await axios.patch(`${API_BASE}/update-task/${id}`);
-  return res.data;
+  try {
+    const res = await axiosInstance.patch<Todo>(`/update-task/${id}`);
+    return res.data;
+  } catch (error) {
+    throw new Error(handleApiError(error));
+  }
 };
