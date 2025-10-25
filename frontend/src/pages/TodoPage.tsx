@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 export default function TodoPage() {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [loading, setLoading] = useState(true); // start true so no flicker
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
