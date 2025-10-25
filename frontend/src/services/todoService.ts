@@ -11,3 +11,8 @@ export const addTask = async (todo: Todo): Promise<Todo> => {
   const res = await axios.post(`${API_BASE}/add-task`, todo);
   return res.data;
 };
+
+export const updateTask = async (id: number): Promise<Todo> => {
+  const res = await axios.patch(`${API_BASE}/update-task/${id}`);
+  return res.data;
+};
