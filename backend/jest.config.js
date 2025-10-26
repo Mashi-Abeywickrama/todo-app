@@ -20,6 +20,7 @@ module.exports = {
     "!src/**/app.ts", // exclude app entry
     "!src/**/server.ts", // exclude server entry
     "!src/prismaClient.ts", // usually mocked
+    "!src/**/todoRoutes.ts", // exclude route files
   ],
   coverageDirectory: "coverage",
 };
