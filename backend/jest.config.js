@@ -17,7 +17,8 @@ module.exports = {
   collectCoverageFrom: [
     "src/**/*.ts",
     "!src/**/*.d.ts",
-    "!src/**/index.ts", // exclude barrels
+    "!src/**/app.ts", // exclude app entry
+    "!src/**/server.ts", // exclude server entry
     "!src/prismaClient.ts", // usually mocked
   ],
   coverageDirectory: "coverage",
