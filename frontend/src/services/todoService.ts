@@ -2,10 +2,16 @@ import axiosInstance from "./api/axiosInstance";
 import { Todo } from "../types/todo";
 import { handleApiError } from "../utils/handleApiError";
 
+interface ApiResponse<T> {
+  success: boolean;
+  data: T;
+}
+
 export const getTasks = async (): Promise<Todo[]> => {
   try {
-    const res = await axiosInstance.get<Todo[]>("/get-tasks");
-    return res.data;
+    const res = await axiosInstance.get<ApiResponse<Todo[]>>("/get-tasks");
+    console.log("Tasks fetched successfully:", res.data);
+    return res.data.data;
   } catch (error) {
     throw new Error(handleApiError(error));
   }
