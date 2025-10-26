@@ -33,7 +33,7 @@ todo-app/
 ### 1. Clone the repository (if applicable)
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Mashi-Abeywickrama/todo-app.git
 cd todo-app
 ```
 
@@ -273,12 +273,11 @@ docker system prune -a
 
 For production, update:
 
-1. Remove `MYSQL_ALLOW_EMPTY_PASSWORD`
-2. Set strong passwords in environment variables
-3. Use Docker secrets for sensitive data
-4. Set `NODE_ENV=production`
-5. Configure proper CORS settings
-6. Set up reverse proxy (nginx/traefik)
+1. Set strong passwords in environment variables
+2. Use Docker secrets for sensitive data
+3. Set `NODE_ENV=production`
+4. Configure proper CORS settings
+5. Set up reverse proxy (nginx/traefik)
 
 ## 🤝 Contributing
 
