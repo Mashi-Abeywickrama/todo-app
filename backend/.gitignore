@@ -1,0 +1,12 @@
+node_modules
+# Keep environment variables out of version control
+.env
+# Ignore generated Prisma client
+/generated/prisma
+#ignore prisma migrations
+/prisma/migrations
+
+# Ignore build output
+dist
+# Ignore test coverage directory
+coverage
