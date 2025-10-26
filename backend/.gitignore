@@ -3,6 +3,8 @@ node_modules
 .env
 # Ignore generated Prisma client
 /generated/prisma
+#ignore prisma migrations
+/prisma/migrations
 
 # Ignore build output
 dist
